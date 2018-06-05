@@ -157,5 +157,45 @@ namespace RegistroParcial1.UI.Registros
         {
             IntegrantesnumericUpDown.Value = (CantidadnumericUpDown.Value / GruposnumericUpDown.Value);
         }
+
+        private void CantidadnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (GruposnumericUpDown.Value != 0)
+                {
+
+                    IntegrantesnumericUpDown.Value = (CantidadnumericUpDown.Value / GruposnumericUpDown.Value);
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+
+            }
+
+        }
+
+        private void GruposnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CantidadnumericUpDown.Value != 0)
+                {
+
+                    IntegrantesnumericUpDown.Value = (CantidadnumericUpDown.Value / GruposnumericUpDown.Value);
+
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
     }
-}
+
+    }

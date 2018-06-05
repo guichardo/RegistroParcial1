@@ -166,6 +166,7 @@
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(135, 20);
             this.CantidadnumericUpDown.TabIndex = 11;
+            this.CantidadnumericUpDown.ValueChanged += new System.EventHandler(this.CantidadnumericUpDown_ValueChanged);
             // 
             // label5
             // 
@@ -182,6 +183,7 @@
             this.GruposnumericUpDown.Name = "GruposnumericUpDown";
             this.GruposnumericUpDown.Size = new System.Drawing.Size(135, 20);
             this.GruposnumericUpDown.TabIndex = 13;
+            this.GruposnumericUpDown.ValueChanged += new System.EventHandler(this.GruposnumericUpDown_ValueChanged);
             // 
             // label6
             // 
