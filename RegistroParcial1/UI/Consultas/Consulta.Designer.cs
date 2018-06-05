@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consulta));
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.filtrarcomboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,9 +44,11 @@
             this.Fechaspanel = new System.Windows.Forms.Panel();
             this.Imprimirbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.CriterioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.Fechaspanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CriterioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // CriteriotextBox
@@ -60,11 +64,11 @@
             // 
             this.filtrarcomboBox.FormattingEnabled = true;
             this.filtrarcomboBox.Items.AddRange(new object[] {
-            "Id",
-            "Nombre",
-            "Cedula",
-            "Direccion",
-            "Telefono"});
+            "ID",
+            "Descripcion",
+            "Cantidad",
+            "Grupos",
+            "Integrantes"});
             this.filtrarcomboBox.Location = new System.Drawing.Point(44, 13);
             this.filtrarcomboBox.Name = "filtrarcomboBox";
             this.filtrarcomboBox.Size = new System.Drawing.Size(121, 21);
@@ -106,6 +110,7 @@
             // 
             // ConsultadataGridView
             // 
+            this.ConsultadataGridView.AllowDrop = true;
             this.ConsultadataGridView.AllowUserToAddRows = false;
             this.ConsultadataGridView.AllowUserToDeleteRows = false;
             this.ConsultadataGridView.AllowUserToOrderColumns = true;
@@ -183,7 +188,7 @@
             // Imprimirbutton
             // 
             this.Imprimirbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Imprimirbutton.Image = global::RegistroParcial1.Properties.Resources.icons8_Print_32;
+            this.Imprimirbutton.Image = ((System.Drawing.Image)(resources.GetObject("Imprimirbutton.Image")));
             this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Imprimirbutton.Location = new System.Drawing.Point(10, 408);
             this.Imprimirbutton.Name = "Imprimirbutton";
@@ -196,7 +201,7 @@
             // Buscarbutton
             // 
             this.Buscarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Buscarbutton.Image = global::RegistroParcial1.Properties.Resources.icons8_Search_32;
+            this.Buscarbutton.Image = ((System.Drawing.Image)(resources.GetObject("Buscarbutton.Image")));
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Buscarbutton.Location = new System.Drawing.Point(562, 11);
             this.Buscarbutton.Name = "Buscarbutton";
@@ -204,6 +209,11 @@
             this.Buscarbutton.TabIndex = 23;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // CriterioerrorProvider
+            // 
+            this.CriterioerrorProvider.ContainerControl = this;
             // 
             // Consulta
             // 
@@ -217,12 +227,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Fechaspanel);
             this.Name = "Consulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.Fechaspanel.ResumeLayout(false);
             this.Fechaspanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CriterioerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,5 +256,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel Fechaspanel;
+        private System.Windows.Forms.ErrorProvider CriterioerrorProvider;
     }
 }
